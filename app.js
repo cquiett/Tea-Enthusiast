@@ -62,12 +62,16 @@ $currentImg.show()
           event.preventDefault();
           const userInput = $('input[type="text"]').val();
           $.ajax({
-            url:'https://www.googleapis.com/books/v1/volumes?q=tea,
+            url:'https://www.googleapis.com/books/v1/volumes?q=' + userInput,
           }).then(
             (data) => {
-              // $('#title').html(data.Title);
-              // $('#year').html(data.Year);
-              // $('#rated').html(data.Rated);
+              console.log(data);
+              $('#title').html(data.Title);
+              $('#authors').html(data.Author);
+              $('#publishedDate').html(data.Published_Date);
+              $('#description').html(data.Description);
+              $('#retailPrice').html(data.Retail_Price);
+              $('#buyLink').html(data.Buy_Link);
             },
             (error) => {
               console.log(error);
@@ -76,3 +80,4 @@ $currentImg.show()
 
   });
 })
+console.log('tea enthusiast');

@@ -2,6 +2,10 @@
 body {
   background-color: lightpink;
 }
+h1 {
+  text-align: center;
+  color: green;
+}
 
 /* Carousel Section */
 .carousel-container {
