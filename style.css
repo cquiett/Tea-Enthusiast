@@ -1,18 +1,24 @@
-/* ATTENTION: I'm starting with Jerrica Bobadilla's example of CSS, but will
-tweak to fit my app. */
+/* ATTENTION: I used Jerrica Bobadilla's example of CSS for the Carousel, but will tweak to fit my app. */
 
 /* General */
 body {
   background-color: lightpink;
+  margin-right: 5em;
+
   /* display: flex;
   flex-direction: column; */
 }
 h1 {
   text-align: center;
   color: green;
+  font-family: 'Courgette', cursive;
 }
-header {
-  margin: 5em;
+
+a {
+  margin: 10em;
+  color: green;
+  font-family: 'Courgette', cursive;
+
 }
 
 /* Carousel Section */
@@ -57,23 +63,40 @@ header {
   color: white;
 }
 
+/*INSTRUCTIONS*/
+
+.instructions-title {
+  display: inline;
+  flex-direction: row;
+  color: green;
+  font-family: 'Courgette', cursive;
+  margin: 5em;
+}
 .instructions {
   display: flex;
   flex-direction: column;
-  margin: 5em;
-  padding: .1em;
-  border-radius: 100%
+  margin: 8em;
+  color: purple;
+  font-family: 'Courgette'; sans;
+  /* height: 100px; */
+  border-style: solid;
+  border-color: green;
 }
 
+h2 {
+  margin: 5em;
+  color:  green;
+
+}
 /*API Section*/
 .formcontainer {
-  padding: .5em;
   margin: 5em;
 }
+
 dt {
   margin: 5em;
-  padding: .5em;
-  /* display: flex;
-  flex-wrap: wrap; */
+  display: flex;
+  flex-grow: <5>;
+  color: purple;
 
 }
