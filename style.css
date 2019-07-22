@@ -1,5 +1,6 @@
 /* ATTENTION: I used Jerrica Bobadilla's example of CSS for the Carousel, but will tweak to fit my app. */
 
+/* Default Style For Mobile */
 /* General */
 body {
   background-color: lightpink;
@@ -33,11 +34,11 @@ a {
 .carousel-images {
   width: 30%;
   /* height: 20px; */
-  background: #fa8d8e;
+  background: lightyellow;
   padding: 10px;
   border-radius: 10px;
   box-sizing: content-box;
-  box-shadow: 2px 2px #f2cd99;
+  box-shadow: 2px 2px #fa8d8e;
 }
 .carousel-images img {
   width: 100%;
@@ -49,7 +50,7 @@ a {
 }
 .carousel-button {
   align-self: center;
-  background: #f2cd99;
+  background: thistle;
   color: green;
   padding: .05em;
   border-radius: 50px;
@@ -64,39 +65,50 @@ a {
 }
 
 /*INSTRUCTIONS*/
-
 .instructions-title {
   display: inline;
   flex-direction: row;
   color: green;
   font-family: 'Courgette', cursive;
-  margin: 5em;
+  margin: 7em;
 }
 .instructions {
   display: flex;
   flex-direction: column;
   margin: 8em;
   color: purple;
-  font-family: 'Courgette'; sans;
+  font-family: 'sans-serif';
   /* height: 100px; */
   border-style: solid;
   border-color: green;
 }
 
+/*Search for Books*/
 h2 {
   margin: 5em;
   color:  green;
-
 }
+
 /*API Section*/
 .formcontainer {
-  margin: 5em;
+  margin: 7em;
 }
 
 dt {
-  margin: 5em;
+  margin: 7em;
   display: flex;
-  flex-grow: <5>;
+  /* flex-grow: <5>; */
   color: purple;
+}
 
+/* #buyLink:link {
+  font-family: 'sans-serif';
+  color: purple;
+} */
+
+/* Styles for desktop when the browser is 600px or above */
+@media (min-width: 600px) {
+ body {
+  background: lightpink;
+ }
 }
