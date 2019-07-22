@@ -12,4 +12,4 @@ I used AJAX to access the Google Books API. I used the coding from class to help
 Link to my live site: https://cquiett.github.io/
 Link to my Github page: https://github.com/cquiett/cquiett.github.io.git
 
-I plan to update this app by redesigning My Blog on my personal gitHub rather than General Assembly's. Additionally, I plan to include links for my favorite tea distributors and my favorite afternoon tearooms located in my local metropolitan area.
+I plan to update this app by putting my instructions into a Modal, redesigning My Blog on my personal gitHub rather than General Assembly's. Additionally, I plan to include links for my favorite tea distributors and my favorite afternoon tearooms located in my local metropolitan area.

@@ -1,35 +1,30 @@
-/* ATTENTION: I used Jerrica Bobadilla's example of CSS for the Carousel, but will tweak to fit my app. */
+/* ATTENTION: I used Jerrica Bobadilla's example of CSS for the Carousel, but tweaked it to fit my app. */
 
 /* Default Style For Mobile */
 /* General */
 body {
   background-color: lightpink;
-  margin-right: 5em;
 
-  /* display: flex;
-  flex-direction: column; */
 }
 h1 {
   text-align: center;
   color: green;
   font-family: 'Courgette', cursive;
 }
-
 a {
   margin: 10em;
   color: green;
   font-family: 'Courgette', cursive;
-
+  font-size: 20px;
 }
 
-/* Carousel Section */
+/* ===Carousel Section=== */
 .carousel-container {
   width: 70%;
   display: flex;
   justify-content: center;
   margin: auto;
   /* flex-wrap: wrap;  */
-
 }
 .carousel-images {
   width: 30%;
@@ -63,32 +58,34 @@ a {
   box-shadow: 1px 1px #f2cd99;
   color: white;
 }
+/* ========END OF CAROUSEL======== */
+
+/* ========TEA STYLING======== */
+.tea {
+  margin: 5em;
+  margin-bottom: -4em;
+  font-family: 'Courgette','sans-serif';
+  color: green;
+  font-size: 23px;
+}
 
 /*INSTRUCTIONS*/
-.instructions-title {
-  display: inline;
-  flex-direction: row;
-  color: green;
-  font-family: 'Courgette', cursive;
-  margin: 7em;
-}
 .instructions {
-  display: flex;
-  flex-direction: column;
-  margin: 8em;
+  /* display: flex;
+  flex-direction: column; */
+  margin: 7em;
   color: purple;
   font-family: 'Courgette','sans-serif';
-  /* height: 100px; */
-  border-style: solid;
+  border-style: ridge;
   border-color: green;
 }
 
 /*Search for Books*/
-h2 {
-  margin: 5em;
+.search-below {
+  font-family: 'Courgette','sans-serif';
+  font-size: 20px;
   color:  green;
 }
-
 /*API Section*/
 .formcontainer {
   margin: 7em;
@@ -96,8 +93,6 @@ h2 {
 
 dt {
   margin: 7em;
-  display: flex;
-  /* flex-grow: <5>; */
   color: purple;
 }
 
@@ -106,6 +101,11 @@ dt {
   color: purple;
 } */
 
+footer a {
+  margin: 7em;
+  font-family: 'sans-serif';
+  font-size: 15px;
+}
 /* Styles for desktop when the browser is 600px or above */
 @media (min-width: 600px) {
  body {

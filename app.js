@@ -7,58 +7,56 @@ $(() => {
 //GRABBING ALL ELEMENTS
 //=====================
 //counter variable to keep track of the current image index
-let currentImgIndex = 0
+  let currentImgIndex = 0
 //current image element
-let $currentImg = $('.carousel-images').children().eq(currentImgIndex)
+  let $currentImg = $('.carousel-images').children().eq(currentImgIndex)
 // number of images
-let numOfImages = $('.carousel-images').children().length-1
+  let numOfImages = $('.carousel-images').children().length-1
 //=====================
 //GRABBING ALL ELEMENTS
 //=====================
 //next button
-const $next = $('.next')
+  const $next = $('.next')
 //previous button
-const $previous = $('.previous')
+  const $previous = $('.previous')
 
 //======================
 //EVENT LISTENER/HANDLER
 //======================
-$next.on('click', () => {
-  // console.log('clicking next');
-//we want the current image to hide
-//grabbing all carousel images
-  // console.log($('.carousel-images').children());
-//then show the next image
+//====Clicking NEXT (left) button=====
+  $next.on('click', () => {
+
 //hiding the current image
-$currentImg.hide()
+      $currentImg.hide()
 //check if the currentImgIndex is less than the amount of images we have
-if(currentImgIndex < numOfImages) {
+      if(currentImgIndex < numOfImages) {
   //Increment current image index
-  currentImgIndex++
-} else {//if the currentImgIndex > the amount of images we have reset the currentImgIndex to 0, so we cycle back
-  currentImgIndex = 0
-}
+    currentImgIndex++
+      } else {//if the currentImgIndex > the amount of images we have reset the currentImgIndex to 0, so we cycle back
+        currentImgIndex = 0
+      }
 //change the currentImg
-$currentImg = $('.carousel-images').children().eq(currentImgIndex)
+      $currentImg = $('.carousel-images').children().eq(currentImgIndex)
 //show the new currentImg
-$currentImg.show()
+      $currentImg.show()
   })
-//previous button
-$previous.on('click', () => {
-  console.log('previous button');
+
+//====Clicking PREVIOUS (right) button====
+  $previous.on('click', () => {
+
 //hide the current image
-$currentImg.hide()
+      $currentImg.hide()
 //check if the currentImgIndex > 0
-if (currentImgIndex > 0) {
+      if (currentImgIndex > 0) {
 //decrement the current image index
-  currentImgIndex--
-} else {// if the currentImgIndex < 0, reset the currentImgIndex to the numOfImages
-  currentImgIndex = numOfImages
-}
+        currentImgIndex--
+        } else {// if the currentImgIndex < 0, reset the currentImgIndex to the numOfImages
+        currentImgIndex = numOfImages
+      }
 //change the currentImg
-$currentImg = $('.carousel-images').children().eq(currentImgIndex)
+    $currentImg = $('.carousel-images').children().eq(currentImgIndex)
 //show the new currentImg
-$currentImg.show()
+    $currentImg.show()
   })
 
 //====AJAX AND JQUERY FOR GOOGLE API=====
@@ -73,7 +71,7 @@ $currentImg.show()
             (data) => {
               console.log(data.items[0]);
               for (i=0; i < 5; i++) {
-                //types of data
+                //types of data called items
                 //did more jQuery to get imageLink to be clicked from app
                 const $img = $('<img>');
                 $('#imageLink').append($img);
@@ -102,4 +100,4 @@ $currentImg.show()
 
   });
 })
-console.log('tea enthusiast');
+// console.log('tea enthusiast');
