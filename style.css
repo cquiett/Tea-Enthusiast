@@ -93,19 +93,87 @@ a {
 
 dt {
   margin: 7em;
+  /* margin-bottom: -2em; */
   color: purple;
 }
 
-/* #buyLink:link {
-  font-family: 'sans-serif';
-  color: purple;
-} */
+/* ======= jQuery DATA: ITEMS Styling ========= */
 
+#imageLink img {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  /* margin-top: -8em; */
+  display: block;
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+}
+
+#title {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  /* margin-top: -8em; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+#authors {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  /* margin-bottom: -8em; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#publishedDate {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  /* margin-bottom: -8em; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+#description {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  /* margin-bottom: -8em; */
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2px;
+}
+
+#retailPrice {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  /* margin-bottom: -8em; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+#buyLink a {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin-left: 3em;
+  margin-top: -5em;
+  /* margin-bottom: -1em; */
+  display: flex;
+
+}
+
+/* ====FOOTER===== */
 footer a {
   margin: 7em;
+  /* margin-top: 5em; */
   font-family: 'sans-serif';
   font-size: 15px;
 }
+/* ===================================================== */
 /* Styles for desktop when the browser is 600px or above */
 @media (min-width: 600px) {
  body {
