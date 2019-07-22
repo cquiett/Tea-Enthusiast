@@ -1,3 +1,7 @@
+//PICTURE CAROUSEL for the UI Module requirement.
+//I used Jerrica Bobadilla's example from class. I will tweek the CSS
+  //to fit my app.
+
 $(() => {
 //=====================
 //GRABBING ALL ELEMENTS
@@ -39,7 +43,6 @@ $currentImg = $('.carousel-images').children().eq(currentImgIndex)
 //show the new currentImg
 $currentImg.show()
   })
-
 //previous button
 $previous.on('click', () => {
   console.log('previous button');
@@ -58,6 +61,9 @@ $currentImg = $('.carousel-images').children().eq(currentImgIndex)
 $currentImg.show()
   })
 
+//====AJAX AND JQUERY FOR GOOGLE API=====
+//==NOTE: I used the AJAX example Matt Huntington showed us in class.
+
   $('form').on('submit', (event) => {
           event.preventDefault();
           const userInput = $('input[type="text"]').val();
@@ -65,16 +71,32 @@ $currentImg.show()
             url:'https://www.googleapis.com/books/v1/volumes?q=' + userInput,
           }).then(
             (data) => {
-              console.log(data);
-              $('#title').html(data.Title);
-              $('#authors').html(data.Author);
-              $('#publishedDate').html(data.Published_Date);
-              $('#description').html(data.Description);
-              $('#retailPrice').html(data.Retail_Price);
-              $('#buyLink').html(data.Buy_Link);
+              console.log(data.items[0]);
+              for (i=0; i < 5; i++) {
+                //types of data
+                //did more jQuery to get imageLink to be clicked from app
+                const $img = $('<img>');
+                $('#imageLink').append($img);
+                const $seeImage = data.items[i].volumeInfo.imageLinks.smallThumbnail;
+                $img.attr('src', $seeImage);
+                $img.append($seeImage);
+                // $('#imageLink').append();
+                $('#title').append(data.items[i].volumeInfo.title);
+                $('#authors').append(data.items[i].volumeInfo.authors);
+                $('#publishedDate').append(data.items[i].volumeInfo.publishedDate);
+                $('#description').append(data.items[i].volumeInfo.description);
+                $('#retailPrice').append(data.items[i].saleInfo.retailPrice.amount);
+                //did more jquery to get the buyLink to be clicked from app
+                const $a = $('<a>');
+                $('#buyLink').append($a);
+                const $buyBook = data.items[i].saleInfo.buyLink;
+                $a.attr('href', $buyBook);
+                $a.append($buyBook);
+
+              }
             },
             (error) => {
-              console.log(error);
+              alert("Something went wrong. Did you type in a search term? Or is your internet down? Please click the reload button and try again. Thanks");
             }
           );
 

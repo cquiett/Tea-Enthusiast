@@ -1,24 +1,36 @@
+/* ATTENTION: I'm starting with Jerrica Bobadilla's example of CSS, but will
+tweak to fit my app. */
+
 /* General */
 body {
   background-color: lightpink;
+  /* display: flex;
+  flex-direction: column; */
 }
 h1 {
   text-align: center;
   color: green;
+}
+header {
+  margin: 5em;
 }
 
 /* Carousel Section */
 .carousel-container {
   width: 70%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin: auto;
+  /* flex-wrap: wrap;  */
+
 }
 .carousel-images {
-  width: 80%;
+  width: 30%;
+  /* height: 20px; */
   background: #fa8d8e;
   padding: 10px;
   border-radius: 10px;
-  box-sizing: border-box;
+  box-sizing: content-box;
   box-shadow: 2px 2px #f2cd99;
 }
 .carousel-images img {
@@ -32,9 +44,9 @@ h1 {
 .carousel-button {
   align-self: center;
   background: #f2cd99;
-  color: #888;
-  padding: 10px;
-  border-radius: 50%;
+  color: green;
+  padding: .05em;
+  border-radius: 50px;
   text-align: center;
   box-shadow: 1px 1px #fa8d8e;
 }
@@ -43,4 +55,25 @@ h1 {
   background: #fa8d8e;
   box-shadow: 1px 1px #f2cd99;
   color: white;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  margin: 5em;
+  padding: .1em;
+  border-radius: 100%
+}
+
+/*API Section*/
+.formcontainer {
+  padding: .5em;
+  margin: 5em;
+}
+dt {
+  margin: 5em;
+  padding: .5em;
+  /* display: flex;
+  flex-wrap: wrap; */
+
 }
