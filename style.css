@@ -99,30 +99,33 @@ dt {
 
 /* ======= jQuery DATA: ITEMS Styling ========= */
 
-#imageLink img {
-  font-family: 'sans-serif';
-  color: cornflowerblue;
-  margin: 7em;
-  /* margin-top: -8em; */
-  display: block;
-  /* flex-direction: row; */
-  /* justify-content: flex-start; */
-}
-
 #title {
   font-family: 'sans-serif';
   color: cornflowerblue;
   margin: 7em;
-  /* margin-top: -8em; */
+  margin-top: -6em;
+  margin-bottom: -3em;
   display: flex;
   justify-content: flex-start;
+}
+
+#imageLink img {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  margin-top: -6em;
+  margin-bottom: -8em
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 #authors {
   font-family: 'sans-serif';
   color: cornflowerblue;
   margin: 7em;
-  /* margin-bottom: -8em; */
+  margin-top: -6em;
+  margin-bottom: -3em;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -132,7 +135,8 @@ dt {
   font-family: 'sans-serif';
   color: cornflowerblue;
   margin: 7em;
-  /* margin-bottom: -8em; */
+  margin-top: -6em;
+  margin-bottom: -3em;
   display: flex;
   justify-content: flex-start;
 }
@@ -141,17 +145,20 @@ dt {
   font-family: 'sans-serif';
   color: cornflowerblue;
   margin: 7em;
-  /* margin-bottom: -8em; */
+  margin-top: -7em;
+  margin-bottom: 5em;
   display: flex;
-  justify-content: space-between;
-  padding-right: 2px;
+  flex-wrap: wrap;
+  /* flex: 0 1 auto; */
+  /* justify-content: space-between; */
+  padding: -6px;
 }
 
 #retailPrice {
   font-family: 'sans-serif';
   color: cornflowerblue;
   margin: 7em;
-  /* margin-bottom: -8em; */
+  margin-bottom: : -6em;
   display: flex;
   justify-content: flex-start;
 }
@@ -163,7 +170,7 @@ dt {
   margin-top: -5em;
   /* margin-bottom: -1em; */
   display: flex;
-
+  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];
 }
 
 /* ====FOOTER===== */
@@ -172,6 +179,8 @@ footer a {
   /* margin-top: 5em; */
   font-family: 'sans-serif';
   font-size: 15px;
+  border-top-style: double;
+  border-top-color: green;
 }
 /* ===================================================== */
 /* Styles for desktop when the browser is 600px or above */

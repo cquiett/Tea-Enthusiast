@@ -69,22 +69,40 @@ $(() => {
             url:'https://www.googleapis.com/books/v1/volumes?q=' + userInput,
           }).then(
             (data) => {
-              console.log(data.items[0]);
+
               for (i=0; i < 5; i++) {
+                console.log(data.items[i]);
                 //types of data called items
-                //did more jQuery to get imageLink to be clicked from app
+                //1. Title
+                const $title = data.items[i].volumeInfo.title;
+                $('#title').append($title + " / ");
+
+                //2. Did more jQuery to get imageLink to be clicked from app
                 const $img = $('<img>');
                 $('#imageLink').append($img);
                 const $seeImage = data.items[i].volumeInfo.imageLinks.smallThumbnail;
                 $img.attr('src', $seeImage);
                 $img.append($seeImage);
-                // $('#imageLink').append();
-                $('#title').append(data.items[i].volumeInfo.title);
-                $('#authors').append(data.items[i].volumeInfo.authors);
-                $('#publishedDate').append(data.items[i].volumeInfo.publishedDate);
-                $('#description').append(data.items[i].volumeInfo.description);
-                $('#retailPrice').append(data.items[i].saleInfo.retailPrice.amount);
-                //did more jquery to get the buyLink to be clicked from app
+
+                //3. Appended title with authors for easy read.
+                $('#authors').append($title + ":  " + data.items[i].volumeInfo.authors + " / ");
+
+                //4. Appended title with publishedDate for easy read.
+                $('#publishedDate').append($title + ":  " + data.items[i].volumeInfo.publishedDate + " / ");
+
+                //5. Created an unordered list for the descriptions.
+                const $ul = $('<ul>');
+                $('#description').append($ul);
+                const $li = $('<li>');
+                $ul.append($li);
+                const $decript = data.items[i].volumeInfo.description
+                //5a. Appended title with description for easy read.
+                $li.append($title + ":  " + $decript);
+
+                //6. Appended title with retailPrice for easy read.
+                $('#retailPrice').append($title + ":  " + "$" + data.items[i].saleInfo.retailPrice.amount + " / ");
+
+                //7. Did more jquery to get the buyLink to be clicked from app
                 const $a = $('<a>');
                 $('#buyLink').append($a);
                 const $buyBook = data.items[i].saleInfo.buyLink;
