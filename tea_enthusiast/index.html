@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Tea Enthusiast</title>
+    <!-- SCRIPTS -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <!-- STYLE -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>The Tea Enthusiast</h1>
+    <header>
+      <a href="https://dash.generalassemb.ly/cquiett/build-your-own-blog-theme">My Blog</a>
+    </header>
+
+    <!-- =========== CAROUSEL CONTAINER example from class======== -->
+    <div class="carousel-container">
+      <!-- previous button -->
+      <div class="carousel-button previous">
+          <h6>Click left</h6>
+        <!-- from linearicons icon font -->
+        <!-- <span class="lnr lnr-chevron-left"></span> -->
+      </div>
+      <!-- images -->
+      <div class="carousel-images">
+          <img src="images/IMG_5689.jpeg" alt="mother's day afternoon tea">
+          <img src="images/IMG_5697.jpeg" alt="weinegars store front">
+          <img src="images/IMG_6145.jpeg" alt="my birthday afternoon tea">
+          <img src="images/IMG_6147.jpeg" alt="inside of weinegars store front">
+      </div>
+      <!-- next button -->
+      <div class="carousel-button next">
+          <h6>Click right</h6>
+      <!-- from linearicons icon font -->
+        <!-- <span class="lnr lnr-chevron-right"></span> -->
+      </div>
+    </div>
+    <!---------------- END OF CAROUSEL --------------------->
+    <!-------------------- TEA HTML ------------------------>
+    <!------------- Instructions For Using App ------------->
+    <div>
+      <p class="tea">Instructions:</p>
+      <div class="instructions">
+          <p>The Tea Enthusiast is an App for tea lovers who want to search for books about tea. Search terms such as "tea history" and "tea party" can be entered in the "Enter tea search here" window.  Press "Get tea info" to retrieve a result.</p>
+          <p>The result will return and display up to 5 books related to your search topic. If the book is available for purchase, the Retail Price will appear. The user can then select "Buy Link" to purchase the book. Google Books is the search engine for this app.</p>
+        <p>The developer for this app has also provided her personal blog link above.</p>
+      </div>
+    </div>
+
+    <!-- =========== AJAX FOR API CONTAINER (example from class)======== -->
+    <div>
+      <form class="formcontainer">
+        <!------ Directing Search Below ---------->
+        <p class="search-below">Search For Books About Tea Below:</p>
+        <input type="text" placeholder="Enter tea search here"/>
+        <input type="submit" value="Get Tea Info" />
+      </form>
+    </div>
+    <!------ Data: Items ---------->
+    <dl>
+      <dt>Title(s)</dt>
+      <dd id="title"></dd>
+
+      <dt>Image(s)</dt>
+      <dd id="imageLink"></dd>
+
+      <dt>Author(s)</dt>
+      <dd id="authors"></dd>
+
+      <dt>Published Date(s)</dt>
+      <dd id="publishedDate"></dd>
+
+      <dt>Description(s)</dt>
+      <dd id="description"></dd>
+
+      <dt>Retail_Price(s)</dt>
+      <dd id="retailPrice"></dd>
+
+      <dt>Buy Link(s)</dt>
+      <dd id="buyLink"></dd>
+    </dl>
+    <!------ FOOTER ---------->
+    <footer>
+      <a href="README.md">README</a>
+    </footer>
+  </body>
+</html>

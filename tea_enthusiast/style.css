@@ -1,0 +1,191 @@
+/* ATTENTION: I used Jerrica Bobadilla's example of CSS for the Carousel, but tweaked it to fit my app. */
+
+/* Default Style For Mobile */
+/* General */
+body {
+  background-color: lightpink;
+
+}
+h1 {
+  text-align: center;
+  color: green;
+  font-family: 'Courgette', cursive;
+}
+a {
+  margin: 10em;
+  color: green;
+  font-family: 'Courgette', cursive;
+  font-size: 20px;
+}
+
+/* ===Carousel Section=== */
+.carousel-container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  /* flex-wrap: wrap;  */
+}
+.carousel-images {
+  width: 30%;
+  /* height: 20px; */
+  background: lightyellow;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: content-box;
+  box-shadow: 2px 2px #fa8d8e;
+}
+.carousel-images img {
+  width: 100%;
+  border-radius: 10px;
+  display: none;
+}
+.carousel-images img:first-of-type {
+  display: block;
+}
+.carousel-button {
+  align-self: center;
+  background: thistle;
+  color: green;
+  padding: .05em;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 1px 1px #fa8d8e;
+}
+.carousel-button:hover {
+  cursor: pointer;
+  background: #fa8d8e;
+  box-shadow: 1px 1px #f2cd99;
+  color: white;
+}
+/* ========END OF CAROUSEL======== */
+
+/* ========TEA STYLING======== */
+.tea {
+  margin: 5em;
+  margin-bottom: -4em;
+  font-family: 'Courgette','sans-serif';
+  color: green;
+  font-size: 23px;
+}
+
+/*INSTRUCTIONS*/
+.instructions {
+  /* display: flex;
+  flex-direction: column; */
+  margin: 7em;
+  color: purple;
+  font-family: 'Courgette','sans-serif';
+  border-style: ridge;
+  border-color: green;
+}
+
+/*Search for Books*/
+.search-below {
+  font-family: 'Courgette','sans-serif';
+  font-size: 20px;
+  color:  green;
+}
+/*API Section*/
+.formcontainer {
+  margin: 7em;
+}
+
+dt {
+  margin: 7em;
+  /* margin-bottom: -2em; */
+  color: purple;
+}
+
+/* ======= jQuery DATA: ITEMS Styling ========= */
+
+#title {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  margin-top: -6em;
+  margin-bottom: -3em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#imageLink img {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  margin-top: -6em;
+  margin-bottom: -8em
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+#authors {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  margin-top: -6em;
+  margin-bottom: -3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#publishedDate {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  margin-top: -6em;
+  margin-bottom: -3em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#description {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  margin-top: -7em;
+  margin-bottom: 5em;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex: 0 1 auto; */
+  /* justify-content: space-between; */
+  padding: -6px;
+}
+
+#retailPrice {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin: 7em;
+  margin-bottom: : -6em;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#buyLink a {
+  font-family: 'sans-serif';
+  color: cornflowerblue;
+  margin-left: 3em;
+  margin-top: -5em;
+  /* margin-bottom: -1em; */
+  display: flex;
+  flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];
+}
+
+/* ====FOOTER===== */
+footer a {
+  margin: 7em;
+  /* margin-top: 5em; */
+  font-family: 'sans-serif';
+  font-size: 15px;
+  border-top-style: double;
+  border-top-color: green;
+}
+/* ===================================================== */
+/* Styles for desktop when the browser is 600px or above */
+@media (min-width: 600px) {
+ body {
+  background: lightpink;
+ }
+}
