@@ -1,4 +1,4 @@
-# teanthusiast
+# teaenthusiast
 THE TEA ENTHUSIAST
 The Tea Enthusiast is an App for tea lovers who want to search for books about tea. Search terms such as "tea history" and "tea party" can be entered in the "Enter tea search here window".  Press "Get tea info" to retrieve a result.
 
