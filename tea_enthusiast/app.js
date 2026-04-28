@@ -67,18 +67,26 @@ $(() => {
 
   const userInput = $('input[type="text"]').val();
 
+  $('#results').html("<p>Searching books...</p>");
+
   $.ajax({
     url: 'https://www.googleapis.com/books/v1/volumes?q=' + userInput,
-  }).then((data) => {
+  })
+  .then((data) => {
 
     $('#results').empty();
+
+    if (!data.items) {
+      $('#results').html("<p>No results found. Try another search.</p>");
+      return;
+    }
 
     for (let i = 0; i < Math.min(5, data.items.length); i++) {
 
       const book = data.items[i];
 
       const title = book.volumeInfo?.title || "No title available";
-      const authors = book.volumeInfo?.authors || ["Unknown author"];
+      const authors = (book.volumeInfo?.authors || ["Unknown"]).join(", ");
       const image = book.volumeInfo?.imageLinks?.thumbnail || "";
       const description = book.volumeInfo?.description || "No description available";
       const price = book.saleInfo?.retailPrice?.amount
@@ -100,11 +108,12 @@ $(() => {
       $('#results').append(card);
     }
 
-  }).catch((error) => {
+  })
+  .catch((error) => {
     console.error(error);
-    alert("Something went wrong. Try again.");
+    $('#results').html("<p>Something went wrong. Try again.</p>");
   });
-
-  });
+});
+  
 });
 // console.log('tea enthusiast');
