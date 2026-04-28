@@ -95,11 +95,9 @@ section, .carousel-container, form {
 .carousel-images img {
   width: 100%;
   border-radius: 10px;
-  display: none;
+  display: none; /* IMPORTANT: JS controls visibility */
 }
-.carousel-images img:first-of-type {
-  display: block;
-}
+
 .carousel-button {
   align-self: center;
   background: thistle;
