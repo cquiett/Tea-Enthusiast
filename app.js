@@ -61,9 +61,18 @@ $(() => {
 
 //====AJAX AND JQUERY FOR GOOGLE API=====
 //==NOTE: I used the AJAX example Matt Huntington showed us in class.
-
+  let canSearch = true;
+  
   $('form').on('submit', (event) => {
   event.preventDefault();
+
+  if (!canSearch) return;
+
+  canSearch = false;
+
+  setTimeout(() => {
+    canSearch = true;
+  }, 2000);
 
   const userInput = $('input[type="text"]').val();
 
