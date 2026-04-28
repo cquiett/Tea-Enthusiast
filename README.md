@@ -1,15 +1,61 @@
 # cquiett.github.io
-THE TEA ENTHUSIAST
-The Tea Enthusiast is an App for tea lovers who want to search for books about tea. Search terms such as "tea history" and "tea party" can be entered in the "Enter tea search here" window.  Press "Get tea info" to retrieve a result.
+# THE TEA ENTHUSIAST
+☕ Tea Enthusiast — Interactive Book Discovery App
 
-The result will return and display up to 5 books related to your search topic. If the book is available for purchase, the Retail Price will appear. The user can then select "Buy Link" to purchase the book. Google Books is the search engine for this app.
+## Overview
+Tea Enthusiast is a front-end web application that allows users to search for books about tea using the Google Books API. The app was designed as both an educational and interactive experience, combining a themed UI with real-time data fetching and dynamic content rendering.
 
-The developer for this app has also provided her personal blog link.
+Users can search for topics related to tea (such as “tea history” or “herbal tea”) and receive up to five relevant book results displayed as responsive cards.
 
-I used the Carousel UI to display pictures of someone having afternoon tea.
-I used AJAX to access the Google Books API. I used the coding from class to help me with the picture Carousel and AJAX. I also added my own coding to display my skills for using Flexbox in CSS and to demonstrate my linking skills by linking My Blog webpage, which was designed for being accepted into this class.
+## Features
+### 🔎 Live Book Search
+Fetches real-time data from the Google Books API
+Displays up to 5 results per search query
+### 📱 Dynamic UI Rendering
+Books are displayed as responsive cards
+Includes title, author(s), description, price, and purchase link
+### 🎠 Interactive Image Carousel
+Custom-built carousel for showcasing tea-related images
+Navigation using previous/next controls
+### ⚡ Rate-Limited API Protection
+Debounce logic prevents excessive API calls
+Improves performance and avoids quota overuse
+### 🧠 Error Handling & Edge Cases
+Handles missing API data (images, prices, descriptions)
+Displays fallback messages when no results are found
 
-Link to my live site: https://cquiett.github.io/
-Link to my Github page: https://github.com/cquiett/cquiett.github.io.git
+## Technologies Used
+HTML5
+CSS3 (Flexbox & Grid layout)
+JavaScript (ES6+)
+jQuery
+Google Books API
 
-I plan to update this app by putting my instructions into a Modal, redesigning My Blog on my personal gitHub rather than General Assembly's. Additionally, I plan to include links for my favorite tea distributors and my favorite afternoon tearooms located in my local metropolitan area.
+## Key Learning Outcomes
+
+### Through this project, I strengthened my skills in:
+Working with third-party REST APIs
+DOM manipulation and dynamic rendering
+Handling asynchronous JavaScript (AJAX)
+Debugging real-world API errors (including rate limits)
+Structuring interactive UI components using vanilla JavaScript and jQuery
+
+## Challenges Solved
+Managed inconsistent API data (missing fields such as images, pricing, and descriptions)
+Resolved UI-breaking issues caused by duplicate files and incorrect DOM structure
+Implemented a debounce mechanism to prevent API quota exhaustion
+Refactored legacy jQuery-heavy logic into a more modular and maintainable structure
+
+## Future Improvements
+Convert project to React for improved component structure
+Add filtering by book category or author
+Improve UI styling with a modern design system (e.g., Tailwind CSS)
+Add favorites or saved books feature
+
+## Live Demo
+
+Link to my live site: https://cquiett.github.io/ 
+Link to my Github page: https://github.com/cquiett/cquiett.github.io.git
+
+## Notes
+This project originally began as a class assignment and was later refactored into a more modern, API-driven web application with improved UI/UX, error handling, and performance considerations.
