@@ -110,9 +110,13 @@ $(() => {
 
   })
   .catch((error) => {
-    console.error(error);
+  console.error(error);
+
+  if (error.status === 429) {
+    $('#results').html("<p>API limit reached. Please try again later.</p>");
+  } else {
     $('#results').html("<p>Something went wrong. Try again.</p>");
-  });
+  }
 });
   
 });
