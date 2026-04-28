@@ -82,6 +82,7 @@ section, .carousel-container, form {
   transform: translateY(-2px);
 }
 
+/* === OLD CAROUSEL === */
 /* 
 .carousel-container {
   width: 70%;
@@ -107,7 +108,7 @@ section, .carousel-container, form {
   display: none; /* IMPORTANT: JS controls visibility */
 }
 */
-/*
+/* 
 .carousel-button {
   align-self: center;
   background: thistle;
