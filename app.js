@@ -25,39 +25,26 @@ $(() => {
 //======================
 //====Clicking NEXT (left) button=====
   $next.on('click', () => {
+  const $images = $('.carousel-images img');
 
-//hiding the current image
-      $currentImg.hide()
-//check if the currentImgIndex is less than the amount of images we have
-      if(currentImgIndex < numOfImages) {
-  //Increment current image index
-    currentImgIndex++
-      } else {//if the currentImgIndex > the amount of images we have reset the currentImgIndex to 0, so we cycle back
-        currentImgIndex = 0
-      }
-//change the currentImg
-      $currentImg = $('.carousel-images').children().eq(currentImgIndex)
-//show the new currentImg
-      $currentImg.show()
-  })
+  $images.eq(currentImgIndex).hide();
+
+  currentImgIndex = (currentImgIndex + 1) % $images.length;
+
+  $images.eq(currentImgIndex).show();
+});
 
 //====Clicking PREVIOUS (right) button====
   $previous.on('click', () => {
+  const $images = $('.carousel-images img');
 
-//hide the current image
-      $currentImg.hide()
-//check if the currentImgIndex > 0
-      if (currentImgIndex > 0) {
-//decrement the current image index
-        currentImgIndex--
-        } else {// if the currentImgIndex < 0, reset the currentImgIndex to the numOfImages
-        currentImgIndex = numOfImages
-      }
-//change the currentImg
-    $currentImg = $('.carousel-images').children().eq(currentImgIndex)
-//show the new currentImg
-    $currentImg.show()
-  })
+  $images.eq(currentImgIndex).hide();
+
+  currentImgIndex =
+    (currentImgIndex - 1 + $images.length) % $images.length;
+
+  $images.eq(currentImgIndex).show();
+});
 
 //====AJAX AND JQUERY FOR GOOGLE API=====
 //==NOTE: I used the AJAX example Matt Huntington showed us in class.
