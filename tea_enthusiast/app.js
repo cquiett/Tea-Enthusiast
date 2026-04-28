@@ -67,15 +67,34 @@ $(() => {
           const userInput = $('input[type="text"]').val();
           $.ajax({
             url:'https://www.googleapis.com/books/v1/volumes?q=' + userInput,
-          }).then(
-            (data) => {
-
-              for (i=0; i < 20; i++) {
-                // console.log(data.items[i]);
-                //types of data called items
-                //1. Title
-                const $title = data.items[i].volumeInfo.title;
-                $('#title').append($title + " / ");
+          })
+  $('#results').empty(); // clear old results
+  
+  for (let i = 0; i < 5; i++) {
+    const book = data.items[i];
+  
+    const title = book.volumeInfo.title || "No title available";
+    const authors = book.volumeInfo.authors || ["Unknown author"];
+    const image = book.volumeInfo.imageLinks?.thumbnail || "";
+    const description = book.volumeInfo.description || "No description available";
+    const price = book.saleInfo?.retailPrice?.amount
+      ? "$" + book.saleInfo.retailPrice.amount
+      : "N/A";
+    const buyLink = book.saleInfo?.buyLink || "#";
+  
+    const card = `
+      <div class="book-card">
+        <img src="${image}" alt="book cover"/>
+        <h3>${title}</h3>
+        <p><strong>Author:</strong> ${authors}</p>
+        <p>${description}</p>
+        <p><strong>Price:</strong> ${price}</p>
+        <a href="${buyLink}" target="_blank">Buy Book</a>
+      </div>
+    `;
+  
+    $('#results').append(card);
+  };
 
                 //2. Did more jQuery to get imageLink to be clicked from app
                 const $img = $('<img>');
