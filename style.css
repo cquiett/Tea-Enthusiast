@@ -62,10 +62,12 @@ section, .carousel-container, form {
   border-radius: 12px;
   display: none;
 }
+ /*
 .carousel-button {
   position: relative;
   z-index: 999;
-} /* trying temporarily */
+} trying temporarily 
+*/
 
 .carousel-button {
   background: white;
@@ -86,13 +88,11 @@ section, .carousel-container, form {
   display: flex;
   justify-content: center;
   margin: auto;
-  /* flex-wrap: wrap;  */
 }
 */ 
 /*
 .carousel-images {
   width: 30%;
-  /* height: 20px; */
   background: lightyellow;
   padding: 10px;
   border-radius: 10px;
