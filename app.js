@@ -1,6 +1,6 @@
 //PICTURE CAROUSEL for the UI Module requirement.
-//I used Jerrica Bobadilla's example from class. I will tweek the CSS
-  //to fit my app.
+//I originally used Jerrica Bobadilla's example from class.
+//The carousel code is now updated, 04282026.
 
 $(() => {
 //=====================
