@@ -63,79 +63,48 @@ $(() => {
 //==NOTE: I used the AJAX example Matt Huntington showed us in class.
 
   $('form').on('submit', (event) => {
-          event.preventDefault();
-          const userInput = $('input[type="text"]').val();
-          $.ajax({
-            url:'https://www.googleapis.com/books/v1/volumes?q=' + userInput,
-          })
-  $('#results').empty(); // clear old results
-  
-  for (let i = 0; i < Math.min(5, data.items.length); i++) {
+  event.preventDefault();
 
-  const book = data.items[i];
+  const userInput = $('input[type="text"]').val();
 
-  const title = book.volumeInfo?.title || "No title available";
-  const authors = book.volumeInfo?.authors || ["Unknown author"];
-  const image = book.volumeInfo?.imageLinks?.thumbnail || "";
-  const description = book.volumeInfo?.description || "No description available";
-  const price = book.saleInfo?.retailPrice?.amount
-    ? "$" + book.saleInfo.retailPrice.amount
-    : "N/A";
-  const buyLink = book.saleInfo?.buyLink || "#";
+  $.ajax({
+    url: 'https://www.googleapis.com/books/v1/volumes?q=' + userInput,
+  }).then((data) => {
 
-  const card = `
-    <div class="book-card">
-      ${image ? `<img src="${image}" />` : ""}
-      <h3>${title}</h3>
-      <p><strong>Author:</strong> ${authors}</p>
-      <p>${description}</p>
-      <p><strong>Price:</strong> ${price}</p>
-      ${buyLink !== "#" ? `<a href="${buyLink}" target="_blank">Buy Book</a>` : ""}
-    </div>
-  `;
+    $('#results').empty();
 
-  $('#results').append(card);
-};
+    for (let i = 0; i < Math.min(5, data.items.length); i++) {
 
-                //2. Did more jQuery to get imageLink to be clicked from app
-                const $img = $('<img>');
-                $('#imageLink').append($img);
-                const $seeImage = data.items[i].volumeInfo.imageLinks.smallThumbnail;
-                $img.attr('src', $seeImage);
-                $img.append($seeImage);
+      const book = data.items[i];
 
-                //3. Appended title with authors for easy read.
-                $('#authors').append($title + ":  " + data.items[i].volumeInfo.authors + " / ");
+      const title = book.volumeInfo?.title || "No title available";
+      const authors = book.volumeInfo?.authors || ["Unknown author"];
+      const image = book.volumeInfo?.imageLinks?.thumbnail || "";
+      const description = book.volumeInfo?.description || "No description available";
+      const price = book.saleInfo?.retailPrice?.amount
+        ? "$" + book.saleInfo.retailPrice.amount
+        : "N/A";
+      const buyLink = book.saleInfo?.buyLink || "#";
 
-                //4. Appended title with publishedDate for easy read.
-                $('#publishedDate').append($title + ":  " + data.items[i].volumeInfo.publishedDate + " / ");
+      const card = `
+        <div class="book-card">
+          ${image ? `<img src="${image}" alt="book cover"/>` : ""}
+          <h3>${title}</h3>
+          <p><strong>Author:</strong> ${authors}</p>
+          <p>${description}</p>
+          <p><strong>Price:</strong> ${price}</p>
+          ${buyLink !== "#" ? `<a href="${buyLink}" target="_blank">Buy Book</a>` : ""}
+        </div>
+      `;
 
-                //5. Created an unordered list for the descriptions.
-                const $ul = $('<ul>');
-                $('#description').append($ul);
-                const $li = $('<li>');
-                $ul.append($li);
-                const $decript = data.items[i].volumeInfo.description
-                //5a. Appended title with description for easy read.
-                $li.append($title + ":  " + $decript);
+      $('#results').append(card);
+    }
 
-                //6. Appended title with retailPrice for easy read.
-                $('#retailPrice').append($title + ":  " + "$" + book.saleInfo?.retailPrice?.amount + " / ");
-
-                //7. Did more jquery to get the buyLink to be clicked from app
-                const $a = $('<a>');
-                $('#buyLink').append($a);
-                const $buyBook = data.items[i].saleInfo.buyLink;
-                $a.attr('href', $buyBook);
-                $a.append($buyBook);
-
-              }
-            },
-            (error) => {
-              alert("Something went wrong. Did you type in a search term? Or is your internet down? Please click the reload button and try again. Thanks");
-            }
-          );
+  }).catch((error) => {
+    console.error(error);
+    alert("Something went wrong. Try again.");
+  });
 
   });
-})
+});
 // console.log('tea enthusiast');
