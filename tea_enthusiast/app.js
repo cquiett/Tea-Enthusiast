@@ -128,7 +128,7 @@ $(() => {
                 $a.attr('href', $buyBook);
                 $a.append($buyBook);
 
-              }
+              })
             },
             (error) => {
               alert("Something went wrong. Did you type in a search term? Or is your internet down? Please click the reload button and try again. Thanks");
