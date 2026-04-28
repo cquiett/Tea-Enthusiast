@@ -62,6 +62,10 @@ section, .carousel-container, form {
   border-radius: 12px;
   display: none;
 }
+.carousel-button {
+  position: relative;
+  z-index: 999;
+} /* trying temporarily */
 
 .carousel-button {
   background: white;
