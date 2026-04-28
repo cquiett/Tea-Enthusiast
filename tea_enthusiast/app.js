@@ -70,7 +70,7 @@ $(() => {
           })
   $('#results').empty(); // clear old results
   
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < Math.min(5, data.items.length); i++) {
     const book = data.items[i];
   
     const title = book.volumeInfo.title || "No title available";
@@ -119,7 +119,7 @@ $(() => {
                 $li.append($title + ":  " + $decript);
 
                 //6. Appended title with retailPrice for easy read.
-                $('#retailPrice').append($title + ":  " + "$" + data.items[i].saleInfo.retailPrice.amount + " / ");
+                $('#retailPrice').append($title + ":  " + "$" + book.saleInfo?.retailPrice?.amount + " / ");
 
                 //7. Did more jquery to get the buyLink to be clicked from app
                 const $a = $('<a>');
@@ -128,7 +128,7 @@ $(() => {
                 $a.attr('href', $buyBook);
                 $a.append($buyBook);
 
-              })
+              }
             },
             (error) => {
               alert("Something went wrong. Did you type in a search term? Or is your internet down? Please click the reload button and try again. Thanks");
