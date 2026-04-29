@@ -2,35 +2,6 @@ const apiKey = CONFIG.API_KEY;
 
 $(() => {
 
-  // =====================
-  // CAROUSEL SETUP
-  // =====================
-  let currentImgIndex = 0;
-  const $images = $('.carousel-images img');
-
-  // show first image
-  $images.hide();
-  $images.eq(currentImgIndex).show();
-
-  const $next = $('.next');
-  const $previous = $('.previous');
-
-  $next.on('click', () => {
-    $images.eq(currentImgIndex).hide();
-    currentImgIndex = (currentImgIndex + 1) % $images.length;
-    $images.eq(currentImgIndex).show();
-  });
-
-  $previous.on('click', () => {
-    $images.eq(currentImgIndex).hide();
-    currentImgIndex =
-      (currentImgIndex - 1 + $images.length) % $images.length;
-    $images.eq(currentImgIndex).show();
-  });
-
-  // =====================
-  // SEARCH + API
-  // =====================
   let canSearch = true;
 
   $('form').on('submit', (event) => {
@@ -49,10 +20,9 @@ $(() => {
     $('#results').html("<p>Searching books...</p>");
 
     $.ajax({
-
       url: `https://www.googleapis.com/books/v1/volumes?q=${userInput}&printType=books&key=${apiKey}`,
-
-    }).then((data) => {
+    })
+    .then((data) => {
 
       $('#results').empty();
 
