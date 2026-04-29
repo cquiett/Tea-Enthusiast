@@ -1,4 +1,5 @@
-const apiKey = CONFIG.API_KEY;
+//const apiKey = CONFIG.API_KEY;
+const apiKey = "AIzaSyDq1ip4dEfoOygpDj8TtHeWHJvbiEy4Zwo";
 
 $(() => {
 
