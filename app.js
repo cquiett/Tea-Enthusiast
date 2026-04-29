@@ -1,5 +1,6 @@
+const apiKey = CONFIG.API_KEY;
+
 $(() => {
-  const apiKey = CONFIG.API_KEY;
 
   // =====================
   // CAROUSEL SETUP
@@ -48,8 +49,8 @@ $(() => {
     $('#results').html("<p>Searching books...</p>");
 
     $.ajax({
-      
-      url: `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&printType=books&key=${apiKey}`,
+
+      url: `https://www.googleapis.com/books/v1/volumes?q=${userInput}&printType=books&key=${apiKey}`,
 
     }).then((data) => {
 
