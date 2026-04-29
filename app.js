@@ -26,6 +26,7 @@ $(() => {
     $images.eq(currentImgIndex).show();
   });
 
+
   // =====================
   // SEARCH + API
   // =====================
