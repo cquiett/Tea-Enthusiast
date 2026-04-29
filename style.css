@@ -121,7 +121,7 @@ header a:hover {
 }
 
 
-======BOOK CARDS=====
+/* ===== BOOK CARDS ===== */
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -168,11 +168,102 @@ footer a {
 }
 /* ===================================================== */
 /* Styles for desktop when the browser is 600px or above */
-@media (min-width: 600px) {
- body {
-  background: lightpink;
- }
+
+/* ===== POLISH TOUCHES ===== */
+
+body {
+  background: linear-gradient(135deg, #fdf6f0, #f7efe5);
 }
+
+h1 {
+  letter-spacing: 1px;
+}
+
+header a {
+  font-weight: bold;
+  border-bottom: 2px solid #2e7d32;
+}
+
+.tea,
+.search-below {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.instructions {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.carousel-button {
+  border: none;
+  font-weight: bold;
+}
+
+.carousel-button h6 {
+  font-size: 0.85rem;
+}
+
+.formcontainer {
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.formcontainer input[type="text"]:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.2);
+  outline: none;
+}
+
+.formcontainer input[type="submit"] {
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.formcontainer input[type="submit"]:hover {
+  transform: translateY(-2px);
+}
+
+#results {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.book-card {
+  border: 1px solid #f0e6dc;
+}
+
+.book-card p {
+  margin-bottom: 8px;
+}
+
+.book-card a {
+  background: #2e7d32;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.book-card a:hover {
+  background: #1b5e20;
+  transform: translateY(-2px);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #2e7d32;
+  text-decoration: none;
+}
+
+
 /* OLD CODE
 ======Modern Search Bar=====
 .formcontainer {
