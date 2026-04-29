@@ -1,5 +1,5 @@
 //const apiKey = CONFIG.API_KEY;
-const apiKey = "AIzaSyDq1ip4dEfoOygpDj8TtHeWHJvbiEy4Zwo";
+//const apiKey = "AIzaSyDq1ip4dEfoOygpDj8TtHeWHJvbiEy4Zwo";
 
 $(() => {
 
@@ -21,7 +21,7 @@ $(() => {
     $('#results').html("<p>Searching books...</p>");
 
     $.ajax({
-      url: `https://www.googleapis.com/books/v1/volumes?q=${userInput}&printType=books&key=${apiKey}`,
+      url: `https://www.googleapis.com/books/v1/volumes?q=${userInput}&printType=books&key=${AIzaSyDq1ip4dEfoOygpDj8TtHeWHJvbiEy4Zwo}`,
     })
     .then((data) => {
 
